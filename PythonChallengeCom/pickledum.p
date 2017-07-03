@@ -1,0 +1,10 @@
+(dp0
+S'lion'
+p1
+S'yellow'
+p2
+sS'fox'
+p3
+S'orange'
+p4
+s.
