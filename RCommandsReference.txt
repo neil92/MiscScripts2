@@ -1,0 +1,50 @@
+#Neil A. Patel
+#20160118
+
+#This is a reference guide for R
+#It's a bunch of commands that I can quickly look up
+
+setwd(directory)
+getwd()
+ls() #lists all current variables
+?command #get help for that command online
+cat(variable) #write out data in variable
+read.csv(file, header = TRUE/FALSE) # header
+	#is false if there is no header in file
+	#this imports data from csv into R
+hist1 <- hist(dataTable[,2], breaks = int) #generate
+	#histogram with second column of data
+dataTable[row, column]
+hist1 #displays all data about histogram like where
+	#breaks are, etc.
+write(variable, file = "filename", sep = ",") #write a variable
+	#to file
+length(vector) #find the number of elements in vector/table
+rm(list=ls()) #deletes all the variables
+source("file.R") #run an R script!
+itsVector = vector(length = number) #create an empty vector
+cbind(vector, vector2, etc) #puts all vectors into a table
+x = seq(start, end, by = interval) #create a sequence of regular
+	#numbers and store it in vector x
+x = rep(0, 24) #to create an empty vector/array of 24
+	#elements long
+x[1] #refer to element 1 in vector
+as.data.frame.matrix(table) #covert table into data frame
+abline(a = yintercept, b = slope) #draw a line onto plot()
+linearLine = lm(formula = y_data~x_data) #creates a linear fit line
+	#intercept = y intercept
+	#the other coefficient is the slope
+abline(linearLine) #plot linear fit line
+length(vector) #returns number of elements in vector
+sd() #standard deviation for sample
+CI <- qnorm(0.95)*sd(vector)/sqrt(count(vector)) #for 95% confidence interval
+rnorm() #generate random normalized numbers
+example("command") #return an example of how to use command'
+install.packages(c("package"), dep = T) #install package and dependencies
+library(package) #loads a library/package before you can use it.
+str(vector) #?eprints out length and first numbers in vector
+summary(vector) #summary of descriptive stats
+head(vector) #first 6 elements in vectorss
+as.character(vector) #converts all numbers in vector to strings
+typeof(vector/variable) #shows you type (e.g. integer, character, double)
+mode(vector/variable) #same as typeof
