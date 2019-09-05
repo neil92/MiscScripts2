@@ -20,6 +20,9 @@ def parse_ps_file(ps_file):
       df_line = pd.DataFrame(data=[split_line], columns=PS_COLUMN_NAMES)
       df_ps_data = df_ps_data.append(df_line, ignore_index=True)
       line = ps_file_object.readline()
+
+  for column in ["%CPU", "%MEM", "VSZ", "RSS"]:
+    df_ps_data.loc[:, column] = pd.to_numeric(df_ps_data.loc[:, column])
   
   return df_ps_data
 
