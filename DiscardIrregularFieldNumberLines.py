@@ -13,12 +13,16 @@ def parse_file(irregular_file, output_file, delimiter, number_of_fields):
     while line:
       total_lines = total_lines + 1
       line = line.strip()
-      split_line = line.split(separator=delimiter)
+      split_line = line.split(sep=delimiter)
+      
+      if (total_lines == 3):
+        print("Number of fields: {}".format(len(split_line)))
 
       if (len(split_line) == number_of_fields):
         output_file_object.write(line)
       else:
         removed_lines = removed_lines + 1
+      line = irregular_file_object.readline()
 
   return (total_lines, removed_lines)
 
@@ -32,7 +36,7 @@ def setup_arguments():
   a_parser.add_argument("-f", "--file", action="store", dest="file_input_data", required=True,
       help="Please supply a file that has an irregular number of fields per line that you want to filter.")
   a_parser.add_argument("-n", "--number_fields", action="store", dest="number_fields", required=False, default=1,
-      help="The number of fields per line (i.e. number of delimiters + 1).")
+      type=int, help="The number of fields per line (i.e. number of delimiters + 1).")
   a_parser.add_argument("-o", "--output_file", action="store", dest="output_file", required=False, 
       default="output_file.txt", help="The output file that the filtered file goes into.")
   a_parser.add_argument("-d", "--delimiter", action="store", dest="delimiter", required=False, default="\t",
