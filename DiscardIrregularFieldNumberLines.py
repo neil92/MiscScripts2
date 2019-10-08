@@ -12,7 +12,6 @@ def parse_file(irregular_file, output_file, delimiter, number_of_fields):
     line = irregular_file_object.readline()
     while line:
       total_lines = total_lines + 1
-      line = line.strip()
       split_line = line.split(sep=delimiter)
       
       if (total_lines == 3):
